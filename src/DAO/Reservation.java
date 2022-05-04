@@ -28,8 +28,6 @@ public class Reservation {
 
 
 
-
-
     public int getReservationID() {
         return reservationID;
     }

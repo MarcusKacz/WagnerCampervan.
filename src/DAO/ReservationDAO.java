@@ -7,10 +7,13 @@ import java.util.Optional;
 public class ReservationDAO implements DAO<Reservation>{
 
     private List<Reservation> reservations = new ArrayList<>();
+    public Database db = new Database();
 
 
-
-
+    public void insertReservation (Reservation r){
+        db.connect();
+        db.customString("EXEC insertReservation ");//TODO
+    }
 
 
     @Override
