@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,26 +9,45 @@ import static javafx.application.Application.launch;
 
 public class GUImenu extends Main implements ActionListener {
 
+    static JFrame frontPanel;
+
     public static Class<? extends Application> mainMenu(){
 
 
-        JFrame frontPanel =new JFrame("Wagner");
+        frontPanel =new JFrame("Wagner");
         JButton menuButton=new JButton("Create Booking");
+        menuButton.setBounds(150,100,200,30);
 
-        menuButton.addActionListener(e -> launch(booking.jframeMenu()));
+        JButton bookingsButton = new JButton("Bookings");
+        bookingsButton.setBounds(150, 150, 200, 30);
 
+        JButton closeButton = new JButton("Close");
+        closeButton.setBounds(150,700,200,30);
+
+
+        // To open Create Bookings
+        menuButton.addActionListener(e -> launch(CreateBooking.jframeMenu()));
         menuButton.addActionListener(e -> {frontPanel.setVisible(false);});
 
-        menuButton.setBounds(150,100,200,30);
+        // To open Bookings
+        bookingsButton.addActionListener(e -> launch(CheckBooking.bookings()));
+        bookingsButton.addActionListener(e -> {frontPanel.setVisible(false);});
+
+
+        closeButton.addActionListener(e -> launch(CloseProgram.closeProgramJFrame()));
+
+
 
 
 
         frontPanel.add(menuButton);
+        frontPanel.add(bookingsButton);
+        frontPanel.add(closeButton);
+
 
         frontPanel.setSize(500,1000);
         frontPanel.setLayout(null);
         frontPanel.setVisible(true);
-
 
 
 

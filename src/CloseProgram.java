@@ -20,8 +20,12 @@ public class CloseProgram {
         JButton noButton = new JButton("No");
         noButton.setBounds(200,120,100,25);
 
-        JLabel closeMessage = new JLabel("TEST");
+        JLabel closeMessage = new JLabel("Are you sure you want to close the program");
+        closeMessage.setBounds(40,50,1000,25);
 
+
+        noButton.addActionListener(e -> {closePanel.setVisible(false);});
+        yesButton.addActionListener(e -> System.exit(0));
 
 
         closePanel.add(yesButton);

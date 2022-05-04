@@ -4,7 +4,7 @@ import javax.swing.*;
 
 import static javafx.application.Application.launch;
 
-public class booking {
+public class CreateBooking {
 
     static JFrame menuPanel;
 
@@ -54,6 +54,7 @@ public class booking {
         menuPanel.setLayout(null);
         menuPanel.setVisible(true);
 
+        // To return to main menu
         menuReturn.addActionListener(e -> launch(GUImenu.mainMenu()));
         menuReturn.addActionListener(e -> {menuPanel.setVisible(false);});
 
