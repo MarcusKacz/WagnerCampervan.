@@ -19,6 +19,8 @@ public class Database{
     private static String userName;
     private static String password;
 
+    private boolean terminated = false;
+
     public Database() { }
 
     public void handleDBProperties() {
@@ -146,6 +148,22 @@ public class Database{
             e.printStackTrace();
         }
         System.out.println("done");
+    }
+
+    public String getDisplayData(){
+        if (terminated){
+            System.exit(0);
+        }
+        if (!pendingData){
+            terminated=true;
+            throw new RuntimeException("ERROR! No previous select, communication with the database is lost!");
+        }else if (!moreData){
+            disconnect();
+            pendingData=false;
+            return NOMOREDATA;
+        }else {
+            return getNextValue(true);
+        }
     }
 }
 
