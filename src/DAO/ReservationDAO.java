@@ -12,9 +12,11 @@ public class ReservationDAO implements DAO<Reservation>{
 
     public void insertReservation (Reservation r){
         db.connect();
-        db.customString("EXEC insertReservation ");//TODO
+        db.customString("EXEC insertReservation "+ r.getWeek() +", "+ r.getCamperID() +", "+ r.getCustomerID() +", "+ r.getInsuranceID() +", "+ r.isDepositPaid());
     }
 
+
+    //CREATE PROC insertReservation (@Week INT, @CamperID INT, @CustomerID INT, @InsuranceID INT, @DepositPaid BIT)
 
     @Override
     public Optional<Reservation> get(long id) {
