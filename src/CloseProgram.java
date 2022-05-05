@@ -15,10 +15,10 @@ public class CloseProgram {
         closePanel.setVisible(true);
 
         JButton yesButton = new JButton("Yes");
-        yesButton.setBounds(50,120,100,25);
+        yesButton.setBounds(200,120,100,25);
 
         JButton noButton = new JButton("No");
-        noButton.setBounds(200,120,100,25);
+        noButton.setBounds(50,120,100,25);
 
         JLabel closeMessage = new JLabel("Are you sure you want to close the program");
         closeMessage.setBounds(40,50,1000,25);

@@ -9,7 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class Database {
+
+public class Database{
 
     private static Connection con;
     private static String url;

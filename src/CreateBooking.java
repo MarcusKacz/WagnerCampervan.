@@ -12,31 +12,47 @@ public class CreateBooking {
 
         menuPanel = new JFrame("Booking");
         JButton menuReturn = new JButton("return");
-        menuReturn.setBounds(400, 535, 200, 30);
+       menuReturn.setBounds(50, 535, 200, 30);
 
         JTextField cID,CName, cEnterWeekNr, cNumberOfWeeks;
 
-        cID = new JTextField("Enter costumer ID");
-        cID.setBounds(50,100, 300,30);
+        JLabel enterCID = new JLabel("Enter Costumer ID: ");
+        enterCID.setBounds(50,100,300,30);
+        menuPanel.add(enterCID);
+        cID = new JTextField("");
+        cID.setBounds(205,100, 300,30);
 
-        CName = new JTextField("Enter Name");
-        CName.setBounds(50,150, 300,30);
+        JLabel enterCName = new JLabel("Enter name: ");
+        enterCName.setBounds(50,150,300,30);
+        menuPanel.add(enterCName);
+        CName = new JTextField("");
+        CName.setBounds(205,150, 300,30);
 
-        cEnterWeekNr = new JTextField("Week nr of departure");
-        cEnterWeekNr.setBounds(50,200, 300,30);
+        JLabel enterWeekNumber = new JLabel("Week nr of departure: ");
+        enterWeekNumber.setBounds(50,200,300,30);
+        menuPanel.add(enterWeekNumber);
+        cEnterWeekNr = new JTextField("");
+        cEnterWeekNr.setBounds(205,200, 300,30);
 
-        cNumberOfWeeks = new JTextField("Enter number of weeks");
-        cNumberOfWeeks.setBounds(50,250, 300,30);
+        JLabel numberOfWeeks = new JLabel("Enter number of weeks: ");
+        numberOfWeeks.setBounds(50,250,300,30);
+        menuPanel.add(numberOfWeeks);
+        cNumberOfWeeks = new JTextField("");
+        cNumberOfWeeks.setBounds(205,250, 300,30);
 
-        String[] optionsToChoose = {"Choose campervan type","Luxury", "Standard", "Basic"};
 
+        JLabel chooseCampervan = new JLabel("Choose campervan type: ");
+        chooseCampervan.setBounds(50,300, 300,30);
+        menuPanel.add(chooseCampervan);
+        String[] optionsToChoose = {"Luxury", "Standard", "Basic"};
         JComboBox<String> camperVan = new JComboBox<>(optionsToChoose);
-        camperVan.setBounds(50, 300, 300, 30);
-
+        camperVan.setBounds(205, 300, 300, 30);
         menuPanel.add(camperVan);
 
+
+
         JButton bookingDone = new JButton("Confirm Booking");
-        bookingDone.setBounds(50, 535, 200, 30);
+        bookingDone.setBounds(400, 535, 200, 30);
         menuPanel.add(bookingDone);
 
 
