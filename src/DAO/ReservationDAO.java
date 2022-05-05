@@ -13,6 +13,7 @@ public class ReservationDAO implements DAO<Reservation>{
     public void insertReservation (Reservation r){
         db.connect();
         db.customString("EXEC insertReservation "+ r.getWeek() +", "+ r.getCamperID() +", "+ r.getCustomerID() +", "+ r.getInsuranceID() +", "+ r.isDepositPaid());
+        db.disconnect();
     }
 
 
