@@ -47,13 +47,13 @@ public class CheckBooking {
 
             for (int i = 0; i < reservationsArray.size(); i++) {
                 //newReservations[i][0] = reservationsArray.get(i).getReservationID();
-                newReservations[i][1] = reservationsArray.get(i).getWeek();
-                newReservations[i][2] = reservationsArray.get(i).getCamperID();
-                newReservations[i][3] = reservationsArray.get(i).getCustomerID();
-                newReservations[i][4] = reservationsArray.get(i).getInsuranceID();
-                newReservations[i][5] = reservationsArray.get(i).getDrivenKM();
-                newReservations[i][6] = reservationsArray.get(i).isDepositPaid();
-                newReservations[i][7] = reservationsArray.get(i).getReservationDate();
+                newReservations[i][0] = reservationsArray.get(i).getWeek();
+                newReservations[i][1] = reservationsArray.get(i).getCamperID();
+                newReservations[i][2] = reservationsArray.get(i).getCustomerID();
+                newReservations[i][3] = reservationsArray.get(i).getInsuranceID();
+                newReservations[i][4] = reservationsArray.get(i).getDrivenKM();
+                newReservations[i][5] = reservationsArray.get(i).isDepositPaid();
+                newReservations[i][6] = reservationsArray.get(i).getReservationDate();
 
             }
 
