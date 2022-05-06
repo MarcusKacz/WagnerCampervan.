@@ -58,27 +58,8 @@ public class Database{
         }
     }
 
-    public void addTo(String tableName, String project_no, String project_name, int budget) {
-
-        try{
-            // Prepare Statement
-            PreparedStatement ps = con.prepareStatement("INSERT INTO " + tableName + " VALUES (?,?,?)");
-
-            // Add values to placeholders
-            ps.setString(1, project_no);
-            ps.setString(2, project_name);
-            ps.setDouble(3, budget);
-
-            // Execute
-            ps.executeUpdate();
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        System.out.println("Row added!");
-    }
-
     public void addTo(String tableName, int emp_no, String emp_fname, String emp_lname, String dept_no) {
+
 
         try{
             // Prepare Statement
@@ -96,7 +77,7 @@ public class Database{
         }catch(Exception e){
             e.printStackTrace();
         }
-        System.out.println("Row added!");
+        System.out.println("Row added");
     }
 
     public void updateField(String tableName, String fieldToChange, String oldEntry, String newEntry) {
@@ -150,6 +131,11 @@ public class Database{
         System.out.println("done");
     }
 
+/*TODO
+    public String getData(){
+
+    }
+
     public String getDisplayData(){
         if (terminated){
             System.exit(0);
@@ -165,5 +151,11 @@ public class Database{
             return getNextValue(true);
         }
     }
+
+ */
+
+
+
+
 }
 
