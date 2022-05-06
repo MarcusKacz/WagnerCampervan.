@@ -3,10 +3,7 @@ package DAO;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 
@@ -131,30 +128,12 @@ public class Database{
         System.out.println("done");
     }
 
-/*TODO
-    public String getData(){
 
+    public ResultSet getData(String query) throws SQLException {
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        return rs;
     }
-
-    public String getDisplayData(){
-        if (terminated){
-            System.exit(0);
-        }
-        if (!pendingData){
-            terminated=true;
-            throw new RuntimeException("ERROR! No previous select, communication with the database is lost!");
-        }else if (!moreData){
-            disconnect();
-            pendingData=false;
-            return NOMOREDATA;
-        }else {
-            return getNextValue(true);
-        }
-    }
-
- */
-
-
 
 
 }

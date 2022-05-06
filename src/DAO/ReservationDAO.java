@@ -17,30 +17,14 @@ public class ReservationDAO implements DAO<Reservation>{
     }
 
 
-    //CREATE PROC insertReservation (@Week INT, @CamperID INT, @CustomerID INT, @InsuranceID INT, @DepositPaid BIT)
-
     @Override
     public Optional<Reservation> get(long id) {
         return Optional.empty();
     }
 
     @Override
-    public List<Reservation> getAll() {
-        return null;
+    public void delete(Reservation r) {
+        db.customString("DELETE FROM Reservation WHERE ReservationID = "+ r.getReservationID());
     }
 
-    @Override
-    public void delete(Reservation t) {
-
-    }
-
-    @Override
-    public void update(Reservation t, String[] params) {
-
-    }
-
-    @Override
-    public void save(Reservation t) {
-
-    }
 }

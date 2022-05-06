@@ -1,17 +1,21 @@
 package UnitTesting;
 
+import DAO.Campervan;
+import DAO.CampervanDAO;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.SQLException;
+
 import static org.junit.Assert.assertEquals;
 
 public class TestClass {
-    public Object instance;
+    public CampervanDAO instance;
 
     @Before
     public void setUp() {
-        instance = new Object();
+        instance = new CampervanDAO();
     }
 
     @After
@@ -30,8 +34,8 @@ public class TestClass {
     }
 
     @Test
-    public void test2 (){
-
+    public void test2 () throws SQLException {
+        instance.readCampervans();
 
     }
 
