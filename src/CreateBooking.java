@@ -101,7 +101,7 @@ public class CreateBooking extends CheckBooking{
         menuPanel.add(menuReturn);
 
 
-        menuPanel.setSize(600, 600);
+        menuPanel.setSize(650, 650);
         menuPanel.setLayout(null);
         menuPanel.setVisible(true);
 
