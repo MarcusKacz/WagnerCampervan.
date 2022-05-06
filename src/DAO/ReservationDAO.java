@@ -25,7 +25,7 @@ public class ReservationDAO implements DAO<Reservation>{
 
         db.connect();
 
-        ResultSet rs = db.getData("SELECT * FROM Campervan");
+        ResultSet rs = db.getData("SELECT * FROM Reservation");
 
         while (rs.next()) {
             int reservationID = rs.getInt("ReservationID");
