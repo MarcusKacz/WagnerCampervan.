@@ -7,20 +7,21 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
 public class TestClass {
-    public CampervanDAO instance;
+    public CampervanDAO campervanInstance;
 
     @Before
     public void setUp() {
-        instance = new CampervanDAO();
+        campervanInstance = new CampervanDAO();
     }
 
     @After
     public void stop(){
-        instance = null;
+        campervanInstance = null;
     }
 
     @Test
@@ -35,7 +36,14 @@ public class TestClass {
 
     @Test
     public void test2 () throws SQLException {
-        instance.readCampervans();
+        ArrayList vans = campervanInstance.readCampervans();
+
+        for (int i = 0; i < vans.size(); i++) {
+            Campervan van = (Campervan) vans.get(i);
+
+            System.out.println(van.getCamperID() + van.getDescription() + van.getTV());
+
+        }
 
     }
 

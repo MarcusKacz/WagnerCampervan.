@@ -18,7 +18,10 @@ public class Database{
 
     private boolean terminated = false;
 
-    public Database() { }
+    public Database() {
+        handleDBProperties();
+
+    }
 
     public void handleDBProperties() {
 

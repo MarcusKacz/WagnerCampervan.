@@ -7,11 +7,12 @@ import java.util.ArrayList;
 public class CampervanDAO {
 
     public ArrayList readCampervans() throws SQLException {
-
-        ArrayList<Campervan> vans = new ArrayList<Campervan>();
+        ArrayList<Campervan> vans = new ArrayList<>();
 
         Database db = new Database();
-        ResultSet rs = db.getData("SELECT * FROM Campervans");
+        db.connect();
+
+        ResultSet rs = db.getData("SELECT * FROM Campervan");
 
         while (rs.next()) {
             int camperID = rs.getInt("CamperID");
@@ -29,6 +30,7 @@ public class CampervanDAO {
 
             vans.add(campervan);
         }
+        db.disconnect();
 
         System.out.println(vans.toString());
         return vans;

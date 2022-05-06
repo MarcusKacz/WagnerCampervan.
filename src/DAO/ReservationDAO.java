@@ -24,7 +24,9 @@ public class ReservationDAO implements DAO<Reservation>{
 
     @Override
     public void delete(Reservation r) {
+        db.connect();
         db.customString("DELETE FROM Reservation WHERE ReservationID = "+ r.getReservationID());
+        db.disconnect();
     }
 
 }
