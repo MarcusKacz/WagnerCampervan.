@@ -24,6 +24,11 @@ public class GUImenu extends Main implements ActionListener {
         JButton closeButton = new JButton("Close");
         closeButton.setBounds(150,700,200,30);
 
+        JButton checkCamper = new JButton("Check Campers");
+        checkCamper.setBounds(150,200,200,30);
+        //Open campers
+        checkCamper.addActionListener(e -> launch(CheckCampervans.campers()));
+        checkCamper.addActionListener(e -> {frontPanel.setVisible(false);});
 
         // To open Create Bookings
         menuButton.addActionListener(e -> launch(CreateBooking.jframeMenu()));
@@ -43,6 +48,7 @@ public class GUImenu extends Main implements ActionListener {
         frontPanel.add(menuButton);
         frontPanel.add(bookingsButton);
         frontPanel.add(closeButton);
+        frontPanel.add(checkCamper);
 
 
         frontPanel.setSize(500,1000);
