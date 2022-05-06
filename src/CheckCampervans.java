@@ -35,7 +35,6 @@ public class CheckCampervans {
         try {
             ArrayList<Campervan> campersArray = campers.readCampervans();
             newCampers= new Object[campersArray.size()][10];
-            System.out.println(campersArray.get(2));
 
             for (int i = 0; i < campersArray.size(); i++) {
                 newCampers[i][0] = campersArray.get(i).getCamperID();
