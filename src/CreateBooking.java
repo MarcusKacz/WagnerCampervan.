@@ -4,9 +4,42 @@ import javax.swing.*;
 
 import static javafx.application.Application.launch;
 
-public class CreateBooking {
+public class CreateBooking extends CheckBooking{
 
     static JFrame menuPanel;
+    static JButton bookingDone;
+    static JTextField cID;
+    static JTextField CName;
+    static JTextField cEnterWeekNr;
+    static JTextField cNumberOfWeeks;
+    static JLabel optionsToChoose;
+
+    String CostumerID;
+    String FullName;
+    String WeekNumberDeparture;
+    String NumberOfWeeks;
+    String CampervanType;
+
+
+    public void TypeReservation(){
+
+        if(bookingDone.isSelected()){
+
+            cID.setText(String.valueOf(CostumerID));
+            CName.setText(String.valueOf(FullName));
+            cEnterWeekNr.setText(String.valueOf(WeekNumberDeparture));
+            cNumberOfWeeks.setText(String.valueOf(NumberOfWeeks));
+            optionsToChoose.setText(String.valueOf(CampervanType));
+
+            Object[][] data =
+                    {
+                            {CostumerID, FullName, WeekNumberDeparture,NumberOfWeeks, CampervanType},
+
+                    };
+        }
+
+    }
+
 
     public static Class<? extends Application> jframeMenu() {
 
@@ -58,7 +91,9 @@ public class CreateBooking {
 
 
 
-        menuPanel.add(cID); menuPanel.add(CName); menuPanel.add(cEnterWeekNr); menuPanel.add(cNumberOfWeeks);
+
+
+     menuPanel.add(cID); menuPanel.add(CName); menuPanel.add(cEnterWeekNr); menuPanel.add(cNumberOfWeeks);
         menuPanel.setSize(400,400);
         menuPanel.setLayout(null);
         menuPanel.setVisible(true);
@@ -77,6 +112,11 @@ public class CreateBooking {
         return null;
 
     }
+
+
+
+
+
 
 }
 

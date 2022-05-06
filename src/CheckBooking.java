@@ -8,6 +8,7 @@ import static javafx.application.Application.launch;
 public class CheckBooking {
 
     static JFrame checkBooking;
+    static  JScrollPane scrollPane;
 
     public static Class<? extends Application>bookings(){
 
