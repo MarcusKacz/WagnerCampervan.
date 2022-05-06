@@ -1,7 +1,14 @@
+import DAO.Campervan;
+import DAO.CampervanDAO;
+import DAO.Reservation;
+import DAO.ReservationDAO;
 import javafx.application.Application;
 //import sun.jvm.hotspot.types.JByteField;
 
 import javax.swing.*;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import static javafx.application.Application.launch;
 
@@ -31,16 +38,32 @@ public class CheckBooking {
         JScrollPane scrollPane = new JScrollPane();
 
         String[] columnNames =
-                {"Costumer ID", "Costumer Name", "Week nr of depature", "nr of weeks", "Campervan type"};
+                {"Week", "Camper id", "Customer id ", "Insurance id","Driven KM","is Deposit paid","Reservation date"};
+        ReservationDAO reservations = new ReservationDAO();
+        Object[][] newReservations;
+        try {
+            ArrayList<Reservation> reservationsArray = reservations.readReservations();
+            newReservations= new Object[reservationsArray.size()][7];
 
-        Object[][] data =
-                {
-                        {new Integer(1),"Allan", new Integer(21), new Integer(3),"Luxury"},
-                        {new Integer(2),"Marcus", new Integer(22), new Integer(4), "Basic"}
-                };
+            for (int i = 0; i < reservationsArray.size(); i++) {
+                //newReservations[i][0] = reservationsArray.get(i).getReservationID();
+                newReservations[i][1] = reservationsArray.get(i).getWeek();
+                newReservations[i][2] = reservationsArray.get(i).getCamperID();
+                newReservations[i][3] = reservationsArray.get(i).getCustomerID();
+                newReservations[i][4] = reservationsArray.get(i).getInsuranceID();
+                newReservations[i][5] = reservationsArray.get(i).getDrivenKM();
+                newReservations[i][6] = reservationsArray.get(i).isDepositPaid();
+                newReservations[i][7] = reservationsArray.get(i).getReservationDate();
+
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+            //newCampers= new Object[1][10];
+        }
 
 
-        JTable table = new JTable(data, columnNames);
+        JTable table = new JTable(newReservations, columnNames);
         JScrollPane jScrollPane = new JScrollPane(table);
 
         jScrollPane.setBounds(205,100, 700,300);

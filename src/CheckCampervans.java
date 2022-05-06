@@ -68,13 +68,6 @@ public class CheckCampervans {
         jScrollPane.setBounds(50,50, 1000,300);
         checkCampervans.add(jScrollPane);
 
-
-
-
-
-
-
-
         return null;
     }
 
