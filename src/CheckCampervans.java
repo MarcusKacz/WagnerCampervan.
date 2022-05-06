@@ -61,12 +61,6 @@ public class CheckCampervans {
         String[] columnNames =
                 {"Camper id", "type", "heating","kitchen","description","TV","Current KM", "Low Season Price", "High Season Price", "No Of Beds"};
 
-        Object[][] data =
-                {
-                        {new Integer(1),"Allan", new Integer(21), new Integer(3),"Luxury","g","g","g","lool","j"},
-                        {new Integer(2),"Marcus", new Integer(22), new Integer(4), "Basic","Luxury","g","g","g","lool","j"}
-                };
-
 
         JTable table = new JTable(newCampers, columnNames);
         JScrollPane jScrollPane = new JScrollPane(table);
