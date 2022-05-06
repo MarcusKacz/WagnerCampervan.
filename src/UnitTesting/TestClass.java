@@ -42,7 +42,6 @@ public class TestClass {
             Campervan van = (Campervan) vans.get(i);
 
             System.out.println(van.getCamperID() + van.getDescription() + van.getTV());
-
         }
 
     }

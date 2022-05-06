@@ -1,5 +1,6 @@
 package DAO;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Reservation {
@@ -11,19 +12,16 @@ public class Reservation {
 
 
 
-    public Reservation(int Week, int CamperID, int CustomerID, int InsuranceID, int DrivenKM, boolean DepositPaid, LocalDate ReservationDate) {
+    public Reservation(int Week, int CamperID, int CustomerID, int InsuranceID, int DrivenKM, boolean DepositPaid, Date ReservationDate) {
         week = Week;
         camperID = CamperID;
         customerID = CustomerID;
         insuranceID = InsuranceID;
         drivenKM = DrivenKM;
         depositPaid = DepositPaid;
-        reservationDate = ReservationDate;
+        Date resdate = ReservationDate;
+        reservationDate = resdate.toLocalDate();
     }
-
-
-
-
 
 
 
