@@ -32,7 +32,6 @@ public class CampervanDAO {
         }
         db.disconnect();
 
-        System.out.println(vans.toString());
         return vans;
     }
 }
