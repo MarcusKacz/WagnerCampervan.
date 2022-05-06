@@ -1,3 +1,5 @@
+import DAO.Reservation;
+import DAO.ReservationDAO;
 import javafx.application.Application;
 
 import javax.swing.*;
@@ -14,11 +16,13 @@ public class CreateBooking extends CheckBooking{
     static JTextField cNumberOfWeeks;
     static JLabel optionsToChoose;
 
-    String CostumerID;
+    int CostumerID;
     String FullName;
-    String WeekNumberDeparture;
-    String NumberOfWeeks;
+    int WeekNumberDeparture;
+    int NumberOfWeeks;
     String CampervanType;
+
+    Reservation res;
 
 
     public void TypeReservation(){
@@ -31,11 +35,13 @@ public class CreateBooking extends CheckBooking{
             cNumberOfWeeks.setText(String.valueOf(NumberOfWeeks));
             optionsToChoose.setText(String.valueOf(CampervanType));
 
-            Object[][] data =
-                    {
-                            {CostumerID, FullName, WeekNumberDeparture,NumberOfWeeks, CampervanType},
+            for (int i = 0; i < NumberOfWeeks; i++) {
+                Reservation reservation = new Reservation(WeekNumberDeparture + i,1,CostumerID,1,0,false);
 
-                    };
+                ReservationDAO reservationDAO = new ReservationDAO();
+                reservationDAO.insertReservation(reservation);
+            }
+
         }
 
     }

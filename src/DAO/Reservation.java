@@ -12,16 +12,16 @@ public class Reservation {
 
 
 
-    public Reservation(int Week, int CamperID, int CustomerID, int InsuranceID, int DrivenKM, boolean DepositPaid, Date ReservationDate) {
+    public Reservation(int Week, int CamperID, int CustomerID, int InsuranceID, int DrivenKM, boolean DepositPaid) {
         week = Week;
         camperID = CamperID;
         customerID = CustomerID;
         insuranceID = InsuranceID;
         drivenKM = DrivenKM;
         depositPaid = DepositPaid;
-        Date resdate = ReservationDate;
-        reservationDate = resdate.toLocalDate();
+
     }
+
 
 
 
@@ -86,7 +86,8 @@ public class Reservation {
         return reservationDate;
     }
 
-    public void setReservationDate(LocalDate reservationDate) {
-        this.reservationDate = reservationDate;
+    public void setReservationDate(Date resdate1) {
+        Date resdate = resdate1;
+        this.reservationDate  = resdate.toLocalDate();
     }
 }

@@ -38,7 +38,7 @@ public class ReservationDAO implements DAO<Reservation>{
             Date reservationDate = rs.getDate("ReservationDate");
 
 
-            Reservation res = new Reservation(week,camperID,customerID,insuranceID,drivenKM,depositPaid,reservationDate);
+            Reservation res = new Reservation(week,camperID,customerID,insuranceID,drivenKM,depositPaid);
 
             reservations.add(res);
         }
